@@ -481,9 +481,9 @@ extern VALUE data_objects_typecast(const char *value, long length, const VALUE t
   }
   else if (type == rb_cBigDecimal) {
     // ORIGINAL
-    return rb_funcall(rb_cBigDecimal, DO_ID_NEW, 1, rb_str_new(value, length));
+    //return rb_funcall(rb_cBigDecimal, DO_ID_NEW, 1, rb_str_new(value, length));
     // Call the function BigDecimal from Kernel
-    //return rb_funcall(rb_mKernel, rb_intern("BigDecimal"), 1, rb_str_new(value, length));
+    return rb_funcall(rb_mKernel, rb_intern("BigDecimal"), 1, rb_str_new(value, length));
   }
   else if (type == rb_cDate) {
     return data_objects_parse_date(value);
